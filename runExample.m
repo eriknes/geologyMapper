@@ -8,6 +8,16 @@ of = cd('toolbox_graph');
 compile_mex;
 cd(of);
 
+%% Binary geology example
+
+clear;
+load BWGanges.mat;
+
+nNodes = 50;
+plotRes = 1;
+topoMapper(BW(1:2:end,1:2:end), nNodes, plotRes);
+
+
 %% SPE10 2D example
 
 clear;
