@@ -18,7 +18,7 @@ plotRes = 1;
 topoMapper(BW(1:2:end,1:2:end), nNodes, plotRes);
 
 
-%% SPE10 2D example
+%% 2D heterogeneous porous media example
 
 clear;
 load spe10data.mat
@@ -49,7 +49,7 @@ set(gca, 'FontSize', 18)
 G2D = permTopoMapper(K2D, nNodes, plotRes);
 
 
-%% Compute distances between multiple realizations of two 3D cases
+%% Compute distances between multiple graph realizations of two 3D cases
 
 % indices
 isel    = 11:50;
@@ -91,7 +91,7 @@ for i = 1:nReal
 end
 
 
-% plot eigenvalues of full graph
+% plot log-transformed eigenvalues of full graph
 eps = 100;
 figure
 plot (log(laplacianSpectrumFullGraphs1(1,:)' + eps),'r')

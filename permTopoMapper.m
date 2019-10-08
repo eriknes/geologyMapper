@@ -71,7 +71,7 @@ end
 
 verbose             = 1;            % print info
 nSpectralDim        = 5;            % number of spectral dims used for clustering
-nPoints             = nVertices*30; % size of point cloud
+nPoints             = nVertices*40; % size of point cloud
 nNeighbors          = 10;           % number of neighbors for each point
 eps                 = 1e-10;        % threshold for Laplacian eigenvalues
 
@@ -398,14 +398,14 @@ points = II(indSample);
 
 clear G;
 
-G.Ared         = Ared;            % Reduced graph adjacency matrix (no weights) 
+G.Ared         = Ared;      % Reduced graph adjacency matrix (no weights) 
 G.Wred      = Wred;         % Reduced graph adjacency matrix
-G.Edges     = Edges;        % edge number
-G.edgeVecs  = edgeVecs;     % direction of edge
-G.mu         = mu;            % Barycenter of nodes
+G.Edges     = Edges;        % Edge number matrix
+G.edgeVecs  = edgeVecs;     % Vectors corresponding to edge matrix entries
+G.mu         = mu;          % Barycenter of reduced graph nodes
 G.W         = W;            % Full point cloud adjacency matrix
-G.points    = points;       % point cloud (linear indices)
-G.idx       = idx;          % cluster number
+G.points    = points;       % Point cloud (linear indices)
+G.idx       = idx;          % Cluster number
 G.cpuTime   = cpuTime;
 
 end
